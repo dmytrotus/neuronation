@@ -12,9 +12,10 @@ class SessionService
         $sessions = Session::all();
 
         $history = $sessions->map(function ($session) {
+
             return [
-                'score' => $session->score,
-                'date' => 'some date',
+                'score' => $session->score->score,
+                'date' => $session->timestamp,
             ];
         });
 

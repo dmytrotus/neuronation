@@ -2,13 +2,12 @@
 
 namespace App\Services;
 
-use Illuminate\Http\JsonResponse;
 use App\Models\Session;
 use Illuminate\Support\Facades\DB;
 
 class SessionService
 {
-    public function getHistory(): JsonResponse
+    public function getHistory(): array
     {
         $sessions = DB::select(
             'SELECT 
@@ -24,6 +23,6 @@ class SessionService
             ];
         }, $sessions);
 
-        return response()->json(['history' => $history]);
+        return $history;
     }
 }

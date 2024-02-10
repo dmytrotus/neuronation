@@ -108,4 +108,5 @@ return [
 
     'prefix' => env('CACHE_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_').'_cache_'),
 
+    'remember_timing' => 60 // 60 seconds
 ];

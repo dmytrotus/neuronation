@@ -12,15 +12,6 @@ class Session extends Model
 
     public $timestamps = false;
 
-    protected $casts = [
-        'timestamp' => 'datetime',
-    ];
-
-    public function getTimestampAttribute($value)
-    {
-        return strtotime($value);
-    }
-
     public function score(): BelongsTo
     {
         return $this->belongsTo(Score::class, 'session_id', 'sid');

@@ -4,20 +4,25 @@ namespace App\Services;
 
 use Illuminate\Http\JsonResponse;
 use App\Models\Session;
+use Illuminate\Support\Facades\DB;
 
 class SessionService
 {
     public function getHistory(): JsonResponse
     {
-        $sessions = Session::all();
+        $sessions = DB::select(
+            'SELECT 
+            sessions.session_id, sessions.timestamp, scores.score
+            FROM sessions
+            JOIN scores ON sessions.session_id = scores.sid'
+        );
 
-        $history = $sessions->map(function ($session) {
-
+        $history = array_map(function ($session) {
             return [
-                'score' => $session->score->score,
-                'date' => $session->timestamp,
+                'score' => (int) $session->score,
+                'date' => (int) strtotime($session->timestamp),
             ];
-        });
+        }, $sessions);
 
         return response()->json(['history' => $history]);
     }

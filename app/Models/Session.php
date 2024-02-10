@@ -16,4 +16,9 @@ class Session extends Model
     {
         return $this->belongsTo(Score::class, 'session_id', 'sid');
     }
+
+    public function course(): BelongsTo
+    {
+        return $this->belongsTo(Course::class, 'course_id', 'course_id');
+    }
 }

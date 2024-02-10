@@ -41,8 +41,7 @@ When the database has data you can run the test HistoryTest
 ```sh
 php artisan test
 ```
-
-## Database challenge
-
-
-## Code challenge
+The route where the json data is returned is below
+```sh
+GET http://localhost:8000/api/sessions/history
+```

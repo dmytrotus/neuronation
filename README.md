@@ -37,6 +37,10 @@ After that the application will be available in your browser
 ```sh
 http://localhost:8000/
 ```
+When the database has data you can run the test HistoryTest
+```sh
+php artisan test
+```
 
 ## Database challenge
 

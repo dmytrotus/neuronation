@@ -45,3 +45,7 @@ The route where the json data is returned is below
 ```sh
 GET http://localhost:8000/api/sessions/history
 ```
+The screenshot of the database is attached and added to the root of the project
+```sh
+db_diagram_neuronation.png
+```

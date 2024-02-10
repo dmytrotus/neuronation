@@ -21,9 +21,17 @@ and generate the encryption key
 ```sh
 php artisan key:generate
 ```
-Run migrations to fill the database
+Run migrations to fill the database structure
 ```sh
 php artisan migrate
+```
+You can fill the database by fake data using command
+```sh
+php artisan app:seed-db-fake-data
+```
+It will create 10 records of each model. You also can specify the count of fake models using --count option
+```sh
+php artisan app:seed-db-fake-data --count=500
 ```
 After that the application will be available in your browser
 ```sh

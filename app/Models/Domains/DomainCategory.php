@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class DomainCategory extends Model
 {
     use HasFactory;
+
+    public $timestamps = false;
 }
